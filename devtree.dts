@@ -1,0 +1,254 @@
+/dts-v1/;
+
+/ {
+
+	Machine@0 {
+		cpu_tier = "10";
+	};
+
+	Aliases@0 {
+	};
+
+	Chosen@0 {
+		version = <0xfcb73201>;
+		last_compat_version = <0xfcb73201>;
+		usb_id_prod_name = "MB526";
+		omap3630_rev = <0x103036>;
+		formfactor = <0x3000000>;
+		product = <0x30120000>;
+		bp_model = "UMTS";
+	};
+
+	System@0 {
+
+		Keypad@0 {
+			rows = <0x2000000>;
+			name = "umts_jordan-keypad";
+			columns = <0x1000000>;
+			mapnum = <0x2000000>;
+			class = "Keypad";
+			rowregister = <0x25000000 0x27000000>;
+			maps = <0x72007300>;
+			type = <0x1000000>;
+			columnregister = <0x2b000000>;
+		};
+
+		VideoOut@0 {
+			max_width = [00 05];
+			max_height = [d0 02];
+			max_buffer_size = <0x301c00>;
+			class = "VideoOut";
+			type = <0xe000000>;
+		};
+
+		GPIO@0 {
+			signalmap = <0x8000000 0x62745f77 0x616b655f 0x62202020 0x20202020 0x20202000 0x16000000 0x61636365 0x6c315f69 0x6e742020 0x20202020 0x20202000 0x17000000 0x6770735f 0x7374616e 0x64627920 0x20202020 0x20202000 0x1c000000 0x616b6d38 0x3937335f 0x72657365 0x74202020 0x20202000 0x3b000000 0x6770735f 0x72657365 0x74202020 0x20202020 0x20202000 0x41000000 0x776c616e 0x5f686f73 0x745f7761 0x6b652020 0x20202000 0x10000000 0x616c735f 0x696e7420 0x20202020 0x20202020 0x20202000 0x63000000 0x746f7563 0x685f7061 0x6e656c5f 0x696e7420 0x20202000 0xa0000000 0x6770735f 0x696e7465 0x72727570 0x74202020 0x20202000 0xa4000000 0x746f7563 0x685f7061 0x6e656c5f 0x72737420 0x20202000 0xaf000000 0x616b6d38 0x3937335f 0x696e7420 0x20202020 0x20202000 0xb0000000 0x706f7765 0x725f6f66 0x66202020 0x20202020 0x20202000 0xf000000 0x62745f68 0x6f73745f 0x77616b65 0x5f622020 0x20202000 0x15000000 0x62745f72 0x65736574 0x5f622020 0x20202020 0x20202000 0xb6000000 0x7669625f 0x636f6e74 0x726f6c5f 0x656e2020 0x20202000 0xba000000 0x776c616e 0x5f726573 0x65742020 0x20202020 0x20202000 0x5c000000 0x6c6d3335 0x33305f69 0x6e742020 0x20202020 0x20202000 0x5d000000 0x6c63645f 0x70616e65 0x6c5f7265 0x73657420 0x20202000 0x5d000000 0x6c6d3335 0x33305f72 0x65736574 0x20202020 0x20202000 0x5c000000 0x6c63645f 0x70616e65 0x6c5f7364 0x20202020 0x20202000 0x62000000 0x6770696f 0x5f63616d 0x5f726573 0x65742020 0x20202000 0x40000000 0x6770696f 0x5f63616d 0x5f707764 0x6e202020 0x20202000>;
+			class = "GPIO";
+			type = <0x3000300>;
+
+			HallEffect@0 {
+				device_available = [01];
+				class = "HallEffect";
+				type = <0x1700>;
+			};
+		};
+
+		Display@0 {
+			dsi_data1_lane = [02];
+			byte_pp = [03];
+			dsi_data2_lane = [03];
+			dsi_data1_pol = [00];
+			disp_hw_type = [04];
+			dispc_timing_hsw = [02 00];
+			pck_div = [05 00];
+			dispc_timing_vbp = [01 00];
+			regm = [ad 00];
+			pixel_fmt = <0x5000000>;
+			dsi_clk_pol = [00];
+			regn = [0d 00];
+			lp_clk_div = [07 00];
+			dsi_clk_lane = [01];
+			dispc_timing_vfp = [00 00];
+			regm3 = [05 00];
+			dispc_timing_hbp = [02 00];
+			dispc_timing_vsw = [01 00];
+			dispc_timing_hfp = [00 00];
+			width = [e0 01];
+			gpio_reset = <0x88000000>;
+			class = "Display";
+			lck_div = [01 00];
+			disp_intf = [04];
+			type = <0x1001a00>;
+			dsi_data2_pol = [00];
+			phy_width_mm = [2e 00];
+			phy_height_mm = [52 00];
+			height = [56 03];
+			regm4 = [05 00];
+		};
+
+		Feature@0 {
+			feature_no_nand = [01];
+			feature_cam_regulators = "vcam";
+			feature_cam_flags = [01];
+			feature_hdmi = [01];
+			feature_smart_cam = [00];
+			feature_mipi_cam = [00];
+			class = "Feature";
+			type = <0xf000000>;
+		};
+
+		DisplayBacklight@0 {
+			ruth_lcd = [00];
+			tablet_lcd = [01];
+			class = "DisplayBacklight";
+			type = <0xd000000>;
+		};
+
+		SDHC@0 {
+			class = "SDHC";
+			type = <0x8000300>;
+
+			SDHCSLOT@0 {
+				host_capability = <0x11000000>;
+				card_detection = <0x1000000>;
+				pwr_supply = <0x1000000>;
+				card_connect = <0x1000000>;
+			};
+
+			SDHCSLOT@2 {
+				host_capability = <0x11000000>;
+				sdcnum = [03];
+				card_detection = <0x1000000>;
+				card_connect = <0x3000000>;
+			};
+
+			SDHCSLOT@1 {
+				host_capability = <0x11010000>;
+				card_detection = <0x0>;
+				card_connect = <0x2000000>;
+			};
+		};
+
+		LEDController@0 {
+			class = "LEDController";
+			type = <0x1002100>;
+			dev_name = "button-backlight";
+		};
+
+		LEDController@1 {
+			dev_name_red = "red";
+			class = "LEDController";
+			dev_name_green = "green";
+			dev_name_blue = "blue";
+			type = <0x5002100>;
+		};
+
+		IOMUX@0 {
+			padwkupsinit = [18 0a 04 00 00 1a 0a 04 01 00 14 0a 04 00 00 16 0a 00 01 03 24 0a 07 00 00 26 0a 01 00 00];
+			offmodeinit = [30 00 00 01 00 00 7a 00 00 01 00 01 7c 00 00 01 00 01 7e 00 00 01 00 01 80 00 00 01 00 01 82 00 01 01 00 01 84 00 00 01 00 01 86 00 00 01 00 01 88 00 00 01 00 01 d2 01 00 01 00 00 16 01 00 01 00 01 18 01 00 01 00 01 2e 01 00 01 00 01 d6 01 00 01 00 01 da 01 00 01 00 01];
+			offmodewkupsinit = [1a 0a 01 01 00 00];
+			padinit = <0x7a000701 0x37c0007 0x1037e00 0x7010380 0x40103 0x82000701 0x3840004 0x1038600 0x7010388 0x70103 0x8a000701 0x38c0004 0x103b200 0x70103b4 0x70103 0xb6000701 0x3b80007 0x103ba00 0x70103bc 0x70103 0xbe000400 0xce0007 0x103d000 0x40001d2 0x40103 0xd4000701 0x3d60007 0x103d800 0x70103da 0x70103 0xe8000701 0x3ea0007 0x103ec00 0x70103ee 0x70103 0xf0000701 0x3f20007 0x103f400 0x70103f6 0x70103 0xf8000701 0x3fa0007 0x103fc00 0x70103fe 0x70103 0x10701 0x3020107 0x1030401 0x7010306 0x1070103 0x8010401 0xa0104 0xc01 0x1000e 0x1000100 0x10010001 0x120100 0x1001401 0x4000016 0x1040100 0x18010701 0x31a0100 0x1001c01 0x1001e 0x1000100 0x20010001 0x220100 0x1002401 0x10026 0x1000100 0x28010001 0x2a0100 0x1002c01 0x1002e 0x1040100 0x30010701 0x3320107 0x1034801 0x1034a 0x1000103 0x4c010001 0x34e0100 0x1035001 0x2010352 0x1020100 0x54010200 0x560102 0x1035801 0x1005a 0x1000103 0x5c010001 0x35e0100 0x1036001 0x10362 0x1000103 0x64010400 0x660105 0x1006801 0x501016a 0x1050101 0x8e010101 0x940104 0x1039c01 0x40003c8 0x1010103 0xca010101 0x3cc0101 0x103ce01 0x10103d0 0x1040101 0xd2010400 0x3d40107 0x103d601 0x103d8 0x1000000 0x64020000 0xda0100 0x101dc01 0xde 0x1040103 0xe2010400 0xd80502 0x100da05 0x20103dc 0x5070103 0xde050401 0xe00504 0x100e205 0x20103e4 0x5020103 0xe6050201 0x3e80502 0x103ea05 0x40000ec 0x5040100 0xee050400 0xf00500 0x100f205 0x100f4 0x5000100 0xf6050001 0xf80504 0x7201 0x5010180 0x1050101>;
+			class = "IOMUX";
+			type = <0x4000300>;
+		};
+
+		I2C@0 {
+			bus3devices = "HP_GEN_LENS,lm3554_led,mt9p012";
+			bus2devices = "akm8973,lis331dlh,kxtf9";
+			bus1devices = "qtouch-obp-ts,lm3530_led,isl29030_als_ir";
+			class = "I2C";
+			type = <0x3000100>;
+
+			Accelerometer@0 {
+				axis_map_z = [02];
+				axis_map_x = [00];
+				negate_x = [01];
+				negate_y = [00];
+				class = "Accelerometer";
+				type = <0x1800>;
+				axis_map_y = [01];
+				negate_z = [01];
+			};
+
+			LEDLM3554@0 {
+				device_available = <0x1000000>;
+				class = "LEDLM3554";
+				flash_duration_def = [cf];
+				type = <0x1000b00>;
+			};
+
+			Proximity@0 {
+				num_samples_for_noise_floor = [05];
+				default_prox_noise_floor = [50];
+				prox_lower_threshold = [0a];
+				i2c_addr = [44];
+				configure = [62];
+				lens_percent_t = [14];
+				prox_higher_threshold = [14];
+				class = "Proximity";
+				interrupt_cntrl = [20];
+				type = <0x1d00>;
+				crosstalk_vs_covered_threshold = [50];
+			};
+
+			TouchOBP@0 {
+				obj_t19 = <0x1003c00 0x0 0x0 0x0>;
+				y_delta = <0x40000>;
+				i2c,address = <0x4a000000>;
+				abs_min_y = <0x0>;
+				abs_max_w = <0x14000000>;
+				x_delta = <0x40000>;
+				obj_t8 = <0xa000a14 0x64000100>;
+				abs_max_y = <0xad030000>;
+				boot_i2c_address = [24];
+				obj_t9 = [0b 00 00 12 09 00 10 28 02 00 19 14 05 3e 02 20 38 05 00 00 00 00 04 00 17 21 d8 30 87 91 00];
+				touch_key_map = <0x8b000000 0x29000000 0x81030000 0x59000000 0x42000000 0x66000000 0xac000000 0x81030000 0x64000000 0x42000000 0x9e000000 0x34010000 0x81030000 0x64000000 0x42000000 0xd9000000 0xba010000 0x81030000 0x5e000000 0x42000000>;
+				obj_t28 = [00 00 02 04 08 07];
+				abs_min_x = <0x15000000>;
+				obj_t15 = [01 00 09 01 03 00 00 ff 01 00];
+				class = "TouchOBP";
+				type = <0x6000700>;
+				touchobp-flags = <0x7c000000>;
+				abs_max_x = <0xeb030000>;
+				obj_t22 = [25 00 00 19 00 e7 ff 04 14 00 00 00 07 0e 14 16 04];
+				obj_t7 = [0a 11 00];
+			};
+		};
+
+		Display@1 {
+			gpio_mux_en = <0x45000000>;
+			gpio_mux_select = <0x7000000>;
+			gpio_pwr_en = <0x1a000000>;
+			class = "Display";
+			gpio_int = <0x19000000>;
+			type = <0x1900>;
+		};
+
+		GPIODev@0 {
+			init = <0x3b000000 0x6770735f 0x72657365 0x74002020 0x20202020 0x20202000 0x8000000 0x17000000 0x6770735f 0x7374616e 0x64627900 0x20202020 0x20202000 0x8000000 0xa0000000 0x6770735f 0x696e7465 0x72727570 0x74002020 0x20202000 0x2010000 0x15000000 0x62745f72 0x65736574 0x5f620020 0x20202020 0x20202000 0x8000000 0x8000000 0x62745f77 0x616b655f 0x62002020 0x20202020 0x20202000 0x8000000 0x5d000000 0x6c63645f 0x70616e65 0x6c5f7265 0x73657400 0x20202000 0x4000000 0x5d000000 0x6c6d3335 0x33305f72 0x65736574 0x202020 0x20202000 0x4000000>;
+			class = "GPIODev";
+			type = <0xa000300>;
+		};
+
+		UART@0 {
+			gps_port = <0x1000000>;
+			hw_flow_control = [40 c0 00];
+			class = "UART";
+			type = <0xb000300>;
+		};
+
+		SPI@0 {
+			class = "SPI";
+			type = <0x7000300>;
+
+			PowerIC@0 {
+				bus_num = [02 00];
+				regulator_init = <0x6000000 0x40771b00 0x40771b00 0x8000000 0x1000108 0x38 0x9c1c0038 0x9c1c0001 0x1 0x10d00 0xd857 0x2a00d857 0x2a000900 0x100 0x10e0000 0xd8572a 0xd8572a 0x90000 0x10001 0xf000000 0xd8572a00 0xd8572a00 0x9000000 0x1000112 0x40 0x771b0020 0x402c0009 0x0 0x1300 0x4077 0x1b002040 0x2c000900 0x0 0x50000 0x20402c 0x20402c 0x80000 0x10001>;
+				spiinit = <0x2e000000 0x4db0000 0x36000000 0x34400000 0x37000000 0x34340000 0x9c000000 0x0>;
+				class = "PowerIC";
+				regulator_mode = <0x6000000 0x43000800 0x8200 0xd000000 0x24000e00 0x100 0xf000000 0x23001600 0x1400 0xa000000 0x13000500 0x8200>;
+				type = <0x6000300>;
+			};
+		};
+	};
+};
