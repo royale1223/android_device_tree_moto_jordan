@@ -1,0 +1,4 @@
+Examples :
+
+Decompile : dtc -f -I fs devtree -O dts -o defy.dts #devtree = devtree file system
+
